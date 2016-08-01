@@ -25,7 +25,8 @@ Features:
 
 ## How to setup
 
-For instructions on how to setup and run the tool, please refer to the project [wiki](https://github.com/AHAAAAAAA/PokemonGo-Map/wiki), or the [video guide](https://www.youtube.com/watch?v=RJKAulPCkRI).
+For instructions, on how to setup and run the tool, please refer to the project [wiki](https://github.com/AHAAAAAAA/PokemonGo-Map/wiki), or 
+the [video guide](https://www.youtube.com/watch?v=RJKAulPCkRI).
 
 
 ## Android Version
