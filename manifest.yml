@@ -15,5 +15,6 @@ applications:
       GMAPS_KEY: yourgmapsapikey
       USERNAME: yourauthserviceusername
       PASSWORD: yourauthservicepassword
+      HOST_PASSKEY: yourhostpasskey
       LOCATION: "yourlocation"
       STEP_COUNT: 5

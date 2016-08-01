@@ -6,6 +6,7 @@ import logging
 
 from flask import Flask, jsonify, render_template, request
 from flask.json import JSONEncoder
+from flask_httpauth import HTTPBasicAuth
 from flask_compress import Compress
 from datetime import datetime
 from s2sphere import *
@@ -16,19 +17,32 @@ from .models import Pokemon, Gym, Pokestop, ScannedLocation
 
 log = logging.getLogger(__name__)
 compress = Compress()
-
+auth = HTTPBasicAuth()
+users = {}
 
 class Pogom(Flask):
     def __init__(self, import_name, **kwargs):
         super(Pogom, self).__init__(import_name, **kwargs)
         compress.init_app(self)
+        
+        users["sayaka"] = config['HOST_PASSKEY'];
+        users["admin"] = config['HOST_PASSKEY'];
+        
         self.json_encoder = CustomJSONEncoder
+        
         self.route("/", methods=['GET'])(self.fullmap)
         self.route("/raw_data", methods=['GET'])(self.raw_data)
         self.route("/loc", methods=['GET'])(self.loc)
         self.route("/next_loc", methods=['POST'])(self.next_loc)
         self.route("/mobile", methods=['GET'])(self.list_pokemon)
 
+    @auth.get_password
+    def get_pw(username):
+        if username in users:
+            return users.get(username)
+        return None
+        
+    @auth.login_required
     def fullmap(self):
         args = get_args()
         display = "inline"

@@ -82,6 +82,8 @@ if __name__ == '__main__':
         search_thread.name = 'search_thread'
         search_thread.start()
 
+    config['HOST_PASSKEY'] = args.host_passkey
+        
     app = Pogom(__name__)
 
     if args.cors:

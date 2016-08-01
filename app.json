@@ -1,7 +1,7 @@
 {
   "name": "PokemonGo Map",
   "description": "Live visualization of all the Pokémon (with option to show gyms and pokéstops) in an area on Pokémon Go.",
-  "repository": "https://github.com/AHAAAAAAA/PokemonGo-Map",
+  "repository": "https://github.com/fanatic84/PokemonGo-Map",
   "keywords": ["pokemon", "pokemon go"],
   "env": {
     "AUTH_SERVICE": {
@@ -22,6 +22,9 @@
     "STEP_COUNT": {
       "description": "The number of steps to take.",
       "value": "5"
+    },
+    "HOST_PASSKEY": {
+      "description": "host passkey"
     },
     "EXTRA_ARGS": {
       "description": "Any extra arguments that you want to pass to runserver.py.",
