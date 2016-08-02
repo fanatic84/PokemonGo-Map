@@ -4,7 +4,7 @@
 import logging
 import os
 import time
-from peewee import Model, MySQLDatabase, SqliteDatabase, InsertQuery,\
+from peewee import Model, MySQLDatabase, SqliteDatabase, PostgresqlDatabase, InsertQuery,\
                    IntegerField, CharField, DoubleField, BooleanField,\
                    DateTimeField, OperationalError
 from datetime import datetime, timedelta
@@ -33,6 +33,14 @@ def init_database():
             password=args.db_pass,
             host=args.db_host)
         log.info('Connecting to MySQL database on {}.'.format(args.db_host))
+	elif args.db_type == 'postgresql':
+        db = PostgresqlDatabase(
+            args.db_name,
+            user=args.db_user,
+            password=args.db_pass,
+            host=args.db_host)
+        log.info('Connecting to MySQL database on {}.'.format(args.db_host))		
+		
     else:
         db = SqliteDatabase(args.db)
         log.info('Connecting to local SQLLite database.')
