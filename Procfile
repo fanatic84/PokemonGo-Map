@@ -1,1 +1,1 @@
-web: python runserver.py -a "$AUTH_SERVICE" -u "$USERNAME" -p "$PASSWORD" -l "$LOCATION" -st $STEP_COUNT -H 0.0.0.0 -P $PORT -k $GMAPS_KEY -hk "$HOST_PASSKEY" -ng -nk -sd 20 --only-server $EXTRA_ARGS
+web: python runserver.py -a "$AUTH_SERVICE" -u "$USERNAME" -p "$PASSWORD" -l "$LOCATION" -st $STEP_COUNT -H 0.0.0.0 -P $PORT -k $GMAPS_KEY -hk "$HOST_PASSKEY" -ng -nk -sd 20 --only-server --db-type "$DB_TYPE" --db-name "$DB_NAME" --db-user "$DB_USER" --db-pass "$DB_PASS" --db-host "$DB_HOST" --db-port "$DB_PORT" $EXTRA_ARGS

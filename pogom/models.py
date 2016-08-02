@@ -31,15 +31,17 @@ def init_database():
             args.db_name,
             user=args.db_user,
             password=args.db_pass,
-            host=args.db_host)
+            host=args.db_host,
+            port=args.db_port)
         log.info('Connecting to MySQL database on {}.'.format(args.db_host))
     elif args.db_type == 'postgresql':
         db = PostgresqlDatabase(
             args.db_name,
             user=args.db_user,
             password=args.db_pass,
-            host=args.db_host)
-        log.info('Connecting to MySQL database on {}.'.format(args.db_host))		
+            host=args.db_host,
+            port=args.db_port)
+        log.info('Connecting to Postgresql database on {}.'.format(args.db_host))		
     else:
         db = SqliteDatabase(args.db)
         log.info('Connecting to local SQLLite database.')
