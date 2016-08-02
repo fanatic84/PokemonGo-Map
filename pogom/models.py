@@ -33,7 +33,7 @@ def init_database():
             password=args.db_pass,
             host=args.db_host)
         log.info('Connecting to MySQL database on {}.'.format(args.db_host))
-	elif args.db_type == 'postgresql':
+    elif args.db_type == 'postgresql':
         db = PostgresqlDatabase(
             args.db_name,
             user=args.db_user,
