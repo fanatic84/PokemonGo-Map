@@ -40,7 +40,6 @@ def init_database():
             password=args.db_pass,
             host=args.db_host)
         log.info('Connecting to MySQL database on {}.'.format(args.db_host))		
-		
     else:
         db = SqliteDatabase(args.db)
         log.info('Connecting to local SQLLite database.')
